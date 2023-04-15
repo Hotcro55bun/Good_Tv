@@ -1,0 +1,174 @@
+.NavbarItems{
+    background: lightsteelblue;
+    height: 10vh;
+    display: flex;
+    align-items: center;  
+    font-size: 1.2rem;  
+    border-bottom: 1px solid black;
+}
+
+.nav-menu{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+ 
+}
+
+.nav-menu.active{
+    background: #a9a9a9;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 4;
+}
+
+
+.nav-links{
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+}
+
+.nav-links:hover{
+    color: white;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
+.menu-icon{
+    /* This is the actual icon */
+    
+    position: relative;
+    margin-right: 2%;
+    font-size: 1.8rem;
+    cursor: pointer;
+      
+}
+
+
+
+/* This will help to allign the navbar icons  */
+.NavbarItems > .menu-icon.container:nth-of-type(1) { margin-left: 5%; } 
+
+/* PUSH LOGIN TO FAR RIGHT USING MARGIN RIGHT AUTO */
+.NavbarItems > .menu-icon.container:nth-of-type(3) { 
+    margin-left: auto;
+    margin-right: 5%;
+    width:120px;
+
+} 
+
+#login-menu-icon{
+    display: flex;
+    align-items: center;
+}
+.fontm{
+    font-size:19.2px;
+    padding: 2%;
+    text-align: center;
+}
+
+
+
+.menu-icon.container{
+    /* Icon container used to build border around icon */
+    
+    border: 1px solid #1e1c2f;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+    
+}
+
+/* -----------Settings Icon----------- */
+
+.fa-gear:hover {
+    animation: gearanimate 5s 1;
+}
+@keyframes gearanimate {
+    
+        from{
+            color: red;
+            transform: rotate(0deg);
+        }to{
+            transform: rotate(360deg);
+        }
+} 
+
+/* -----------Settings Icon----------- */
+
+
+
+
+
+
+
+@media screen and (max-width:960px){
+    .NavbarItems{
+        position:relative;
+    }
+    .nav-menu{
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+    .nav-menu.active{
+        background: #1e1c2f;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+    .nav-links{
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+    .nav-links:hover{
+        color: whitesmoke;
+
+        
+    }
+    .navbar-logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(25%,50%);
+    }
+    .menu-icon{
+        display: flex;
+        position: relative;
+        font-size: 1.8rem;
+        cursor: pointer;
+        
+    }
+    .menu-icon.container{
+        border: 1px solid #1e1c2f;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    
+    }
+}
+

@@ -1,0 +1,458 @@
+:root {
+    /* dont change  */
+    --infoBoxHeight: 42px;
+    --BoxButtonHeight: 10%;
+    --calcBoxHeight: 15%;
+    --buttonRadius: 25px;
+
+}
+
+.calc_outer {
+
+    background: white;
+    height: 100%;
+    outline: 1px solid black;
+
+}
+
+.calc_Pos_Button {
+
+    height: var(--BoxButtonHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cccccc;
+    flex-direction: column;
+}
+/* info Box */
+.calc_infoBox:hover .fa-angle-up{
+    color: red;
+    transform: rotate(180deg);     
+}
+
+.calc_infoBox {
+    height: var(--infoBoxHeight);
+    background-color: #cccccc;
+    outline: 1px solid black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc_infoBox_cryptoDropDown-content {
+    position: absolute;
+    width: 90%;
+    background-color: lightsteelblue;
+    left: +50%;
+    top: 100%;
+    display: none;
+    outline: 1px solid black;
+    transform: translate(-50%,0);
+    
+}
+
+.calc_infoBox:hover .calc_infoBox_cryptoDropDown-content{
+    display: block;
+}
+
+.calc_infoBox_cryptoDropDown-content-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+.calc_infoBox_cryptoDropDown-content-div:nth-of-type(2n+1) {
+    
+    background-color: #cccccc;
+    
+}
+.calc_infoBox_cryptoDropDown-content-div:hover{
+    color: white;
+}
+.cryptoName {
+
+    display: inline-block;
+    font-weight: bold;
+}
+
+.cryptoImage {
+    display: inline-block;
+    width: 30px;
+    margin-right: 5px;
+}
+/* next section */
+.calc_inputField_outer {
+
+    height: calc(100% - var(--infoBoxHeight) - var(--BoxButtonHeight) - var(--calcBoxHeight));
+    outline: 1px solid black;
+    background-color: #cccccc;
+    padding: 2% 2% 2% 2%;
+}
+
+.calc_inputField {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+
+}
+
+.calc_inputField_addTrade_help {
+    text-align: center;
+
+}
+
+/* button group */
+.calc_btn-group button {
+    background-color: rgb(252, 252, 252);
+    /* Green background */
+    border: 1px solid black;
+    /* Green border */
+    color: rgb(0, 0, 0);
+    /* White text */
+    padding: 6px 18px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: left;
+    /* Float the buttons side by side */
+    font-size: 16px;
+
+}
+
+.calc_btn-group {
+    margin: 1%;
+}
+
+.calc_btn-group button:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+
+}
+
+.calc_btn-group button:nth-child(1) {
+    border-top-left-radius: var(--buttonRadius);
+    border-bottom-left-radius: var(--buttonRadius);
+}
+
+.calc_btn-group button:nth-last-child(1) {
+
+    border-bottom-right-radius: var(--buttonRadius);
+    border-top-right-radius: var(--buttonRadius);
+}
+
+
+
+
+
+.calc_input::placeholder {
+    color: black;
+    opacity: 1;
+    font-size: 16px;
+}
+
+
+.calc_input {
+
+    width: 100%;
+    padding: 10px 24px;
+    border-radius: var(--buttonRadius);
+
+    border: 1px solid black;
+    outline: 0;
+    background: transparent;
+    display: block;
+    font-size: 16px;
+    background-color: white;
+
+
+    text-align: center;
+
+}
+
+.calc_output {
+    width: 100%;
+    height: var(--calcBoxHeight);
+    text-align: center;
+    background-color: #cccccc;
+
+}
+
+/* calc button double verification */
+.calc_output_button_confirm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 30%;
+    height: 11%;
+    background-color: lightsteelblue;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    border: 1px solid black;
+
+}
+
+.calc_output_button_confirm_cancel,
+.calc_output_button_confirm_confirm {
+    width: 30%;
+    height: 63%;
+    
+    border-width: 0;
+    display: inline-block;
+    font-style: normal;
+    list-style: none;
+    margin: 0;
+
+    border: 1px solid black;
+    background-size: 0 100%, auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* transition: all 0.5s ease-out; */
+    font-size: 16px;
+
+
+}
+
+@keyframes effec {
+    from {
+        color: black;
+        background-size: 0% 0%, auto;
+    }
+
+    to {
+        color: white;
+        background-size: 100% 100%, auto;
+    }
+}
+
+.calc_output_button_confirm_confirm {
+    background-color: green;
+}
+
+.calc_output_button_confirm_cancel {
+    background-color: red;
+}
+.calc_output_button_confirm_confirm:hover,.calc_output_button_confirm_cancel:hover{
+    color: white;
+}
+
+
+/* CSS for user button*/
+.calc_output_button {
+
+    border-radius: 8px;
+    border-width: 0;
+    display: inline-block;
+    font-style: normal;
+    list-style: none;
+    margin: 0;
+    padding: 15px 12px;
+    transform: translateY(50%);
+    border: 1px solid black;
+    background-image: linear-gradient(dodgerblue, dodgerblue), linear-gradient(lightsteelblue, lightsteelblue);
+    background-size: 0 100%, auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 0.5s ease-out;
+    font-size: 16px;
+
+}
+
+.calc_output_button:hover {
+    /* animation: pulse 2s; */
+
+    color: #fff;
+    background-size: 100% 100%, auto;
+
+
+}
+
+/* lock image if user not logged in*/
+.calc_output_button_false>.fa-lock {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    padding: 2%;
+    border: 1px solid black;
+}
+
+.calc_output_button_false {
+
+    border-radius: 8px;
+    border-width: 0;
+    display: inline-block;
+    font-style: normal;
+    list-style: none;
+    margin: 0;
+    padding: 15px 12px;
+    transform: translateY(50%);
+    border: 1px solid black;
+    background-image: linear-gradient(dodgerblue, dodgerblue), linear-gradient(lightsteelblue, lightsteelblue);
+    background-size: 0 100%, auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 0.5s ease-out;
+    font-size: 16px;
+}
+
+/* user not signed in  */
+.calc_output_button_notSignedIn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background-color: lightskyblue;
+    width: 30%;
+    height: 30%;
+    padding: 2%;
+    border: 1px solid black;
+}
+
+.calc_output_button_notSignedIn>p:nth-of-type(n) {
+
+    padding: 2%;
+}
+
+.calc_output_button_notSignedIn>p:nth-of-type(1) {
+    font-weight: bold;
+    font-size: large;
+
+    padding-bottom: 4%;
+}
+
+.fa-location-crosshairs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    background-color: white;
+    border-radius: 20px;
+    padding: 2%;
+    border: 1px solid black;
+
+}
+
+.fa-location-crosshairs:hover {
+    background-color: lightgray;
+    color: red;
+
+}
+
+
+
+/* .calc_inputBox:hover{
+      animation:shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  } */
+
+/* ////////////////// */
+
+.calc_radio {
+    margin: 2%;
+    text-align: center;
+    width: 100%;
+}
+
+.calc_inputBox {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.calc_inputBox_info {
+    text-align: center;
+}
+
+.calc_inputBox_info>p {
+    padding: 4%;
+}
+
+
+
+
+.calc_copyButton {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: large;
+}
+
+.calc_copyButton:hover {
+    background-color: green;
+    border-radius: 100px;
+    width: 80px
+}
+
+.placeHolderOutput {
+    margin: 4%;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.calc_inputLabel {
+    margin-left: 4%;
+}
+
+
+
+@media screen and (max-width:960px) {
+
+
+    /* shrink input box */
+    .calc_input {
+
+        width: 100%;
+        font-size: medium;
+        border: 0 !important;
+        border-radius: 0;
+        outline: 0;
+        background: transparent !important;
+        border-bottom: 1px solid black !important;
+        display: block;
+        text-align: center;
+
+    }
+
+    .calc_inputBox {
+        width: 90%;
+    }
+
+    /* confimration for trade add to port */
+    .calc_output_button_confirm {
+        width: 70%;
+        height: 30%;
+    }
+
+    /* not signed in for trade add button */
+    .calc_output_button_notSignedIn {
+        width: 70%;
+        height: 50%;
+    }
+
+    .calc_output_button_notSignedIn>p:nth-of-type(n) {
+        padding: 5%;
+    }
+
+    .calc_inputBox:nth-of-type(4) {
+        display: none;
+    }
+
+}
